@@ -5,15 +5,21 @@ const reducers = combineReducers({
     console.log('Numeros')
     console.log(state, '', action)
     switch(action.type) {
-      case 'NUM_MIN_ALTERADO':
+      case 'NUM_ALTERADO':
         return {
           ...state,
-          min: action.payload
+          min: action.payload,
         }
+      case 'NUM_MAX_ALTERADO':
+        return {
+          ...state,
+          max: action.payload,
+        }
+
       default:
         return {
-          min:2,
-          max:10
+          min:0,
+          max:0
         }
     }
   },
